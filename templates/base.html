@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Jeff Odhiambo">
+    <meta name="keywords" content="Homepage,Jeff, Odhiambo, Jeff Odhiambo, Portfolio, Resume, CV">
+    <meta name="description" content="Jeff Odhiambo's Homepage that contains the overview of his experiences, background and education">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'partials/style.html' %}
+    <title>Jeff Odhiambo | {% block title %} {% endblock %}</title>
+</head>
+<body style="/*background: url(&quot;design.jpg&quot;);*/background-position: 0 -60px;">
+    {% include 'partials/top-nav.html' %}
+    {% block content %}
+
+    {% endblock %}
+    {% include 'partials/footer.html' %}
+    {% include 'partials/js.html' %}
+</body>
+</html>

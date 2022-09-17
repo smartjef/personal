@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2">Contacts</p>
+                <h2 class="fw-bold">How you can reach me</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4"><div>
+                <form class="p-3 p-xl-4" method="post">
+                    <div class="mb-3">
+                        <input class="form-control rounded-pill" type="text" id="fname" name="fname" placeholder="Enter firstname">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control rounded-pill" type="text" id="lname" name="lname" placeholder="Enter lastname">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control rounded-pill" type="email" id="email" name="email" placeholder="Enter Email">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message"></textarea>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary shadow d-block w-100" type="submit">Send </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-4 d-flex justify-content-center justify-content-xl-start">
+            <div class="d-flex flex-wrap flex-md-column justify-content-md-start align-items-md-start h-100">
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="px-2">
+                        <h6 class="fw-bold mb-0">Phone</h6>
+                        <p class="text-muted mb-0"><a href="tel:+254795067776" class="text-decoration-none">+254 795067776</a></p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>  
+                    </div>
+                    <div class="px-2">
+                        <h6 class="fw-bold mb-0">Email</h6>
+                        <p class="text-muted mb-0"><a href="mailto:o.jeff3.a@gmail.com" class="text-decoration-none">info@odhiambo-jeff.me</a></p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i> 
+                    </div>
+                    <div class="px-2">
+                        <h6 class="fw-bold mb-0">LinkedIn</h6>
+                        <p class="text-muted mb-0"><a href="https://www.linkedin.com/in/jeff-odhiambo/" class="text-decoration-none">linkedin.com/in/jeff-odhiambo</a></p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fab fa-github" aria-hidden="true"></i> 
+                    </div>
+                    <div class="px-2">
+                        <h6 class="fw-bold mb-0">Github</h6>
+                        <p class="text-muted mb-0"><a href="https://github.com/killall-nano" class="text-decoration-none">github.com/killall-nano</a></p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fab fa-internet-explorer" aria-hidden="true"></i>
+                    </div>
+                    <div class="px-2">
+                        <h6 class="fw-bold mb-0">Website</h6>
+                        <p class="text-muted mb-0"><a href="http://odhiambo-jeff.me" class="text-decoration-none">odhiambo-jeff.me</a></p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center p-3">
+                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
+                        <i class="fas fa-map-pin fa-lg fa-fw"></i>    
+                    </div>
+                        <div class="px-2"><h6 class="fw-bold mb-0">Location</h6>
+                            <p class="text-muted mb-0">62100-00200 Juja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  {% endblock %}
