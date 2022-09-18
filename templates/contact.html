@@ -4,91 +4,67 @@
 {% block title %}Contacts{% endblock %}
 
 {% block content %}
-<section class="py-5">
-    <div class="container py-5">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Contacts</p>
-                <h2 class="fw-bold">How you can reach me</h2>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 col-xl-4"><div>
-                <form class="p-3 p-xl-4" method="post">
-                    <div class="mb-3">
-                        <input class="form-control rounded-pill" type="text" id="fname" name="fname" placeholder="Enter firstname">
-                    </div>
-                    <div class="mb-3">
-                        <input class="form-control rounded-pill" type="text" id="lname" name="lname" placeholder="Enter lastname">
-                    </div>
-                    <div class="mb-3">
-                        <input class="form-control rounded-pill" type="email" id="email" name="email" placeholder="Enter Email">
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message"></textarea>
-                    </div>
+<h1 class="fw-bold text-secondary mt-3 mb-4 text-center">Contacts</h1>
+
+<section class="position-relative py-5">
+    <div class="d-md-none"><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.06403683054!2d37.008411915330576!3d-1.1141283357782634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f47952563285d%3A0x70d092fb85ccb757!2sVSTech%20Limited%20Company!5e0!3m2!1sen!2ske!4v1663516243533!5m2!1sen!2ske" width="100%" height="100%"></iframe></div>
+    <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100"><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.06403683054!2d37.008411915330576!3d-1.1141283357782634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f47952563285d%3A0x70d092fb85ccb757!2sVSTech%20Limited%20Company!5e0!3m2!1sen!2ske!4v1663516243533!5m2!1sen!2ske" width="100%" height="100%"></iframe></div>
+    <div class="position-relative mx-2 my-5 m-md-5">
+        <div class="container-fluid position-relative">
+            <div class="row">
+                <div class="col-md-6 col-xl-5 col-xxl-3 offset-md-6 offset-xl-7 offset-xxl-8">
                     <div>
-                        <button class="btn btn-primary shadow d-block w-100" type="submit">Send </button>
+                        <form class="border rounded shadow p-3 p-md-4 p-lg-5" method="post" style="background: var(--bs-body-bg);">
+                            <h3 class="text-center mb-3">Contact me</h3>
+                            <div class="d-flex p-2 justify-content-evenly">
+                                <a href="tel:+254795067776" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <a href="mailto:info@odhiambo-jeff.me" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <a href="https://www.linkedin.com/in/jeff-odhiambo/" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fab fa-linkedin" aria-hidden="true"></i>
+                                    </div>
+                                </a><a href="https://github.com/killall-nano/" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fab fa-github" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <a href="http://odhiambo-jeff.me" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fab fa-internet-explorer" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <a href="https://goo.gl/maps/4seLaPrLG9YpHrBi7" class="text-white m-1">
+                                    <div class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                                       <i class="fas fa-map-pin fa-lg fa-fw" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control rounded-pill" type="text" id="fname" name="fname" placeholder="Enter firstname">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control rounded-pill" type="text" id="lname" name="lname" placeholder="Enter lastname">
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control rounded-pill" type="email" id="email" name="email" placeholder="Enter Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Message"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary shadow d-block w-100" type="submit">Send </button>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-md-4 col-xl-4 d-flex justify-content-center justify-content-xl-start">
-            <div class="d-flex flex-wrap flex-md-column justify-content-md-start align-items-md-start h-100">
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </div>
-                    <div class="px-2">
-                        <h6 class="fw-bold mb-0">Phone</h6>
-                        <p class="text-muted mb-0"><a href="tel:+254795067776" class="text-decoration-none">+254 795067776</a></p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>  
-                    </div>
-                    <div class="px-2">
-                        <h6 class="fw-bold mb-0">Email</h6>
-                        <p class="text-muted mb-0"><a href="mailto:info@odhiambo-jeff.me" class="text-decoration-none">info@odhiambo-jeff.me</a></p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i> 
-                    </div>
-                    <div class="px-2">
-                        <h6 class="fw-bold mb-0">LinkedIn</h6>
-                        <p class="text-muted mb-0"><a href="https://www.linkedin.com/in/jeff-odhiambo/" class="text-decoration-none">linkedin.com/in/jeff-odhiambo</a></p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fab fa-github" aria-hidden="true"></i> 
-                    </div>
-                    <div class="px-2">
-                        <h6 class="fw-bold mb-0">Github</h6>
-                        <p class="text-muted mb-0"><a href="https://github.com/killall-nano" class="text-decoration-none">github.com/killall-nano</a></p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fab fa-internet-explorer" aria-hidden="true"></i>
-                    </div>
-                    <div class="px-2">
-                        <h6 class="fw-bold mb-0">Website</h6>
-                        <p class="text-muted mb-0"><a href="http://odhiambo-jeff.me" class="text-decoration-none">odhiambo-jeff.me</a></p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center p-3">
-                    <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md">
-                        <i class="fas fa-map-pin fa-lg fa-fw"></i>    
-                    </div>
-                        <div class="px-2"><h6 class="fw-bold mb-0">Location</h6>
-                            <p class="text-muted mb-0">62100-00200 Juja</p>
-                        </div>
-                    </div>
-                </div>
+                </div>      
             </div>
         </div>
     </div>

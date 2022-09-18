@@ -1,0 +1,31 @@
+{% load static %}
+<section>
+    <div class="container">
+        <div class="row align-items-center justify-content-center" style="min-height: 85vh;">
+            <div class="col-md-6">
+                <img src="{% static 'img/jeff.png' %}" alt="Jeff Odhiambo" class="img-fluid">
+            </div>
+            <div class="col-md-6 px-5 text-dark">
+                <h1 class="text-primary font-weight-bold">Jeff Odhiambo</h1>
+                <h2>Full-Stack Developer</h2>
+                <h3 class="mt-3">Contacts:</h3>
+                <div class="row">
+                    <a href="mailto:info@odhiambo-jeff.me">info@odhiambo-jeff.me</a>
+                    <a href="tel:+254795067776">+254795067776</a>
+                    <a href="http://odhiambo-jeff.me">odhiambo-jeff.me</a>
+                </div>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="mailto:info@odhiambo-jeff.me"><i class="fab fa-google" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/jeff-odhiambo/"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/killall-nano"><i class="fab fa-github-alt" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://twitter.com/Jeff18309725"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                </ul>
+                <div class="d-flex my-3 align-items-center">
+                    <div><a href="{% url 'resume:resume' %}" class="btn btn-primary btn-sm rounded-pill m-2">CV</a></div>
+                    <div><a href="{% url 'resume:resume' %}" class="btn btn-success btn-sm rounded-pill">Resume</a></div>
+                    <div><a href="{% url 'portfolio:portfolio' %}" class="btn btn-outline-primary rounded-pill btn-sm m-2">Portfolio</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
