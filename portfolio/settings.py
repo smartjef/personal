@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'base',
     'my_portfolio',
     'resume',
+    'skills',
+    'projects_experiences',
 
     'crispy_forms',
 ]
