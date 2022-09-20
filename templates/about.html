@@ -5,57 +5,21 @@
 
 {% block content %}
 <h1 class="fw-bold text-secondary mt-5 text-center">About Me</h1>
-<section class="py-5" id="background">
-    <div class="container py-5">
-        <div class="row mb-4 mb-lg-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Background</p>
-                <h3 class="fw-bold">My Background and Life Story</h3>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
-                <div>
-                    <h5 class="fw-bold">Lorem ipsum dolor sit&nbsp;</h5>
-                    <p class="text-muted mb-4">I am a software developer with a passion for building web applications. I have experience in building web applications using Python, Django, JavaScript, React, HTML, CSS, Bootstrap, and TailwindCSS. I have also worked with databases such as PostgreSQL, MySQL, and SQLite. I am also familiar with version control using Git and GitHub. I am currently looking for a job as a software developer.</p>
+{% if about %}
+    {% for abt in about %}
+        <section class="pb-5" id="background">
+            <div class="container py-3 shadow-sm">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <p class="fw-bold text-success mb-2">{{abt.title}}</p>
+                    <h3 class="fw-bold">{{abt.title}}</h3>
+                </div>
+                <div class="col d-md-flex align-items-md-end align-items-lg-center">
+                    <div>
+                        <p class="text-muted my-3">{{abt.description}}.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section class="py-5" id="motives">
-    <div class="container py-5">
-        <div class="row mb-4 mb-lg-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Objectives</p>
-                <h3 class="fw-bold">What drives me</h3>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
-                <div>
-                    <h5 class="fw-bold">Lorem ipsum dolor sit&nbsp;</h5>
-                    <p class="text-muted mb-4">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> 
-<section class="py-5" id="experience">
-    <div class="container py-5">
-        <div class="row mb-4 mb-lg-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <p class="fw-bold text-success mb-2">Experience</p>
-                <h3 class="fw-bold">Gained Experience</h3>
-            </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
-                <div><h5 class="fw-bold">Lorem ipsum dolor sit&nbsp;</h5>
-                    <p class="text-muted mb-4">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>    
+        </section>
+    {% endfor %}
+{% endif %}
 {% endblock %}
