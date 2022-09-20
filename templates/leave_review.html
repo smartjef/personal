@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Leave a Review{% endblock %}
+{% block content %}
+
+<section class="py-5" id="leave-review">
+    <div class="container py-5">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2">Leave a Review</p>
+                <h3 class="fw-bold">Leave a Review</h3>
+            </div>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+            <div class="form-group col-md-4">
+                    <label for="name" class="fw-bold">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="e.g Jeff Odhiambo">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="position" class="fw-bold">Position</label>
+                    <input type="text" class="form-control" id="position" required name="position" placeholder="e.g Android Developer">
+                </div>
+                <div class="form-group col-md-8 mb-4">
+                    <label for="profile" class="fw-bold">Profile</label>
+                    <input type="file" class="form-control" name="profile" id="profile">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="review" class="fw-bold">Review</label>
+                    <textarea class="form-control" id="review" required name="review" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 mt-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+           </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

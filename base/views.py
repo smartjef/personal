@@ -4,7 +4,7 @@ from .models import Review
 def index(request):
     reviews = Review.objects.all()
     context = {
-        'reviews': reviews
+        'reviews': reviews,
     }
     return render(request,'index.html', context)
 
@@ -13,3 +13,6 @@ def contact(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def leave_review(request):
+    return render(request, 'leave_review.html')

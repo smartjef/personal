@@ -47,42 +47,25 @@
                 <p class="text-muted w-lg-50">No matter the design, logic or project, I can handle it.&nbsp;</p>
             </div>
         </div>
+        {% if reviews %}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 d-sm-flex justify-content-sm-center">
+            {% for review in reviews %}
             <div class="col mb-4">
                 <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-light border rounded border-light p-4">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
+                    <p class="bg-light border rounded border-light small p-4">{{review.message|truncatechars:100}}</p>
                     <div class="d-flex">
-                        <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="{% static 'assets/img/team/avatar2.jpg' %}">
+                        <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="{% if review.image %}{{review.image.url}}{% else %}{% static 'assets/img/team/avatar2.jpg' %}{% endif %}">
                         <div>
-                            <p class="fw-bold text-primary mb-0">Joy Ann</p>
-                            <p class="text-muted mb-0">Android Developer</p>
+                            <p class="fw-bold text-primary mb-0">{{review.name}}</p>
+                            <p class="text-muted mb-0">{{review.position}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col mb-4">
-                <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-light border rounded border-light p-4">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
-                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="{% static 'assets/img/team/avatar4.jpg' %}">
-                        <div>
-                            <p class="fw-bold text-primary mb-0">Laurent Ouma</p>
-                            <p class="text-muted mb-0">Network Engineer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="d-flex flex-column align-items-center align-items-sm-start">
-                    <p class="bg-light border rounded border-light p-4">Nisi sit justo faucibus nec ornare amet, tortor torquent. Blandit class dapibus, aliquet morbi.</p>
-                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="{% static 'assets/img/team/avatar5.jpg' %}">
-                        <div>
-                            <p class="fw-bold text-primary mb-0">Chritine Mwali</p><p class="text-muted mb-0">ICT Director</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+        {% endif %}
+        <a href="{% url 'leave_review' %}" class="nav-link mt-4 text-secondary fw-bold"><p class="text-center">Leave a review</p></a>
     </div>
 </section>
-
 {% endblock %}
