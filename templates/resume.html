@@ -122,8 +122,10 @@
                             <h5 class="card-title">{{referee.name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{referee.position}}</h6>
                             <p class="card-text">{{referee.description}}</p>
-                            <a href="mailto:{{referee.email}}" class="card-link">{{referee.email}}</a>
-                            <a href="tel:{{referee.phone}}" class="card-link">{{referee.phone}}</a>
+                            <p>
+                                <a href="mailto:{{referee.email}}" class="text-decoration-none">{{referee.email}}</a> <br>
+                                <a href="tel:{{referee.phone}}" class="text-decoration-none">{{referee.phone}}</a>
+                            </p>
                         </div>
                     </div>
                 </div>
