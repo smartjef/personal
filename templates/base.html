@@ -12,6 +12,15 @@
 </head>
 <body style="/*background: url(&quot;design.jpg&quot;);*/background-position: 0 -60px;">
     {% include 'partials/top-nav.html' %}
+    <div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="my-3 mx-5 alert alert-{{ message.tags }}" role="alert">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
     {% block content %}
 
     {% endblock %}

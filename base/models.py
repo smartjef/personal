@@ -1,4 +1,3 @@
-from turtle import position
 from django.db import models
 
 # Create your models here.
@@ -18,7 +17,7 @@ class Review(models.Model):
 
 class About(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(max_length=500)
     image = models.ImageField(upload_to='about/', null=True, blank=True)
 
     def __str__(self):
@@ -38,4 +37,5 @@ class Contact(models.Model):
 
     class Meta:
         verbose_name_plural = 'Contact'
+
 

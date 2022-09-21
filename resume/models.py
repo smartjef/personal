@@ -18,3 +18,4 @@ class Education(models.Model):
     class Meta:
         verbose_name_plural = 'Education'
         ordering = ['-date_completed', '-expected_grad_date']
+
