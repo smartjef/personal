@@ -18,65 +18,41 @@
 <section class="py-5">
     <div class="container py-5">
         <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-            <div class="col mb-4">
-                <div>
-                    <a href="#">
-                        <img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'assets/img/products/1.jpg' %}" style="height: 250px;">
-                    </a>
-                    <div class="py-4">
-                        <span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div>
-                    <a href="#">
-                        <img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'assets/img/products/2.jpg' %}" style="height: 250px;">
-                    </a>
-                    <div class="py-4">
-                        <span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div>
-                    <a href="#">
-                        <img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'assets/img/products/3.jpg' %}" style="height: 250px;"></a>
-                        <div class="py-4">
-                            <span class="badge bg-primary mb-2">Website</span>
-                            <h4 class="fw-bold">Lorem libero donec</h4>
-                            <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        </div>
-                    </div>
-                </div>
+            {% if portfolios %}
+                {% for portfolio in portfolios %}
                 <div class="col mb-4">
                     <div>
-                        <a href="#">
-                            <img class="rounded img-fluid shadow w-100 fit-cover" src="{% static 'assets/img/products/1.jpg' %}" style="height: 250px;">
-                        </a>
+                        {% if portfolio.image %}
+                            <a href="{% if portfolio.url %}{{portfolio.url}}{% endif %}">
+                                <img class="rounded img-fluid shadow w-100 fit-cover" src="{{portfolio.image.url}}" style="height: 250px;">
+                            </a>
+                        {% endif %}
                         <div class="py-4">
-                            <span class="badge bg-primary mb-2">Website</span>
-                            <h4 class="fw-bold">Lorem libero donec</h4>
-                            <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            <span class="badge bg-primary mb-2"><a href="{{portfolio.url}}" class="text-white">view</a></span>
+                            <h4 class="fw-bold">{{portfolio.title}}</h4>
+                            <p class="text-muted">{{portfolio.description}}</p>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+            {% endif %}
             </div>
         </div>
 </section>
 <section class="photo-gallery py-4 py-xl-5">
     <div class="container">
         <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
-            <div class="col item"><a href=""><img class="img-fluid" src="{% static 'assets/img/products/1.jpg' %}"></a></div>
+            {% if portfolios %}
+                {% for portfolio in portfolios %}
+                    {% if portfolio.image %}
+                        <div class="col item">
+                            <a href="{% if portfolio.url %}{{portfolio.url}}{% endif %}">
+                                <img class="img-fluid" src="{{portfolio.image.url}}">
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </section>

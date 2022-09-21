@@ -11,12 +11,13 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
+        first_name = request.POST['firstname']
+        last_name = request.POST['lastname']
         email = request.POST['email']
         message = request.POST['message']
         print(first_name, last_name, email, message)
         messages.success(request, 'Message sent successfully.')
+
     return render(request, 'contact.html')
 
 def about(request):
