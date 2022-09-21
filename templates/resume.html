@@ -15,17 +15,20 @@
                 {% for edu in education %}
                 <div class="col-lg-12 p-2">
                     <div class="d-flex align-items-center">
+                        {% if edu.institution_logo %}
+                            <div class="">
+                                <a href=""><img src="{{edu.institution_logo.url}}" height="80" alt="{{edu.institution}}"></a>
+                            </div>
+                        {% endif %}
                         <div class="w-100">
                             <div class="d-flex align-items-center justify-content-between"><h3 class="text-primary">{{edu.course}}</h3><small>{% if edu.date_completed %}Completed: {{edu.date_completed}}{% else %}Expected: {{edu.expected_grad_date.year}}, {{edu.expected_grad_date.year}}{% endif %}</small></div>
-                            <div class="d-flex align-items-center justify-content-between"><h4><a href="{{edu.institution_logo.url}}">{{edu.institution}}</a></h4><small>{{edu.institution_city}}</small></div>
+                            <div class="d-flex align-items-center justify-content-between"><h4>{{edu.institution}}</h4><small>{{edu.institution_city}}</small></div>
                         </div>
                     </div>
                     <h5 class="my-2">Related Course work:</h5>
                     <p>{{edu.related_course_work}}</p>
-                    {% if edu.date_completed %}
-                        {% if edu.certificate_url %}
-                            <a href="{{edu.certificate_url}}" class="btn btn-outline-dark btn-sm">Certificate <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        {% endif %}
+                    {% if edu.certificate_url %}
+                        <a href="{{edu.certificate_url}}" class="btn btn-outline-dark btn-sm">Certificate <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     {% endif %}
                 </div>
                 {% endfor %}
@@ -40,33 +43,17 @@
                 </thead>
                 <tbody class="teble table-light">
                     <tr>
-                        <td class="col-sm-4">
-                            <ul class="list-unstyled">
-                                {% if p_languages %}
-                                    {% for p_lang in p_languages %}
-                                        <li>{{p_lang}} - <span class="small">{{p_lang.level}}</span></li>
-                                    {% endfor %}
-                                {% endif %}
-
-                            </ul>
-                        </td>
-                        <td class="col-sm-4">
-                           <ul class="list-unstyled">
-                                 {% if tools %}
-                                    {% for tool in tools %}
-                                        <li>{{tool}}</div></li>
-                                    {% endfor %}
-                                {% endif %}
-                           </ul>
+                        <td>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
                         </td>
                         <td>
-                            <ul class="list-unstyled">
-                                {% if frameworks %}
-                                    {% for framework in frameworks %}
-                                        <li>{{framework}} - <span class="small">{{framework.level}}</span></li>
-                                    {% endfor %}
-                                {% endif %}
-                            </ul>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
+                        </td>
+                        <td>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum
                         </td>
                     </tr>
                 </tbody>
@@ -74,65 +61,70 @@
         </div>
         <div class="col-md-12 col-lg-6">
             <h3 class="fw-bold text-uppercase">Experiences & Projects</h3>
-            {% if projects %}
-                <p class="text-secondary mb-5 fw-bold">Projects</p>
-                {% for project in projects %}
-                    <div class="col-lg-12 p-2">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <h3 class="text-primary">{{project.title}} - <span class="text-muted small">{{project.company}}</span></h3><small>{% if project.date_completed %}{{project.date_completed}}{% else %} In Progress{% endif %}</small>
-                        </div>
-                        <p>
-                            {{project.description|linebreaks}}
-                        </p>
-                        {% if project.github_url %}
-                            <a href="{{project.github_url}}" class="btn btn-dark btn-sm m-2">Github <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        {% endif %}
-                        {% if project.live_url %}
-                            <a href="{{project.live_url}}" class="btn btn-outline-dark btn-sm m-2">Live <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            {% else %}
-                <p class="text-center text-muted my-4">No projects added</p>
-            {% endif %}
-            {% if experiences %}
-                <p class="text-secondary my-4 fw-bold">Experiences</p>
-                {% for experience in experiences %}
-                    <div class="col-lg-12 p-2">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <h3 class="text-primary">{{experience.position}} - <span class="text-muted small">{{experience.company}}</span></h3><small>{{experience.start_date}} - {% if experience.end_date %}{{experience.end_date}}{% else %}Present{% endif %}</small>
-                        </div>
-                        <p>
-                            {{experience.description}}
-                        </p>
-                    </div>
-                {% endfor %}
-            {% else %}
-                <p class="text-center text-muted my-4">No experiences added</p>
-            {% endif %}
+            <p class="text-secondary mb-5 fw-bold">Projects</p>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Project name - <span class="text-muted small">Company</span></h3><small>Nov 2022</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+                <a href="" class="btn btn-dark btn-sm m-2">Github <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="" class="btn btn-outline-dark btn-sm m-2">Live <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Project name - <span class="text-muted small">Company</span></h3><small>Nov 2022</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+                <a href="" class="btn btn-dark btn-sm m-2">Github <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="" class="btn btn-outline-dark btn-sm m-2">Live <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Project name - <span class="text-muted small">Company</span></h3><small>Nov 2022</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+                <a href="" class="btn btn-dark btn-sm m-2">Github <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="" class="btn btn-outline-dark btn-sm m-2">Live <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <p class="text-secondary my-4 fw-bold">Experiences</p>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Company - <span class="text-muted small">Role</span></h3><small>Nov 2022 - Current</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+            </div>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Company - <span class="text-muted small">Role</span></h3><small>Nov 2022 - Current</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+            </div>
+            <div class="col-lg-12 p-2">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="text-primary">Company - <span class="text-muted small">Role</span></h3><small>Nov 2022 - Current</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus totam in at iusto sint delectus laborum, quibusdam voluptas facilis iste commodi harum quisquam, tenetur sunt fugit a molestiae dolorem fuga!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium suscipit officiis veritatis nostrum alias exercitationem esse harum delectus aliquam? Ea deserunt incidunt corporis nisi error nam, facilis omnis in quos!
+                </p>
+            </div>
         </div>
     </div>
-    <h3 class="fw-bold text-uppercase">Referees</h3>
-    <div class="row">
-        {% if referees %}
-            {% for referee in referees %}
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{referee.name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{referee.position}}</h6>
-                            <p class="card-text">{{referee.description}}</p>
-                            <p>
-                                <a href="mailto:{{referee.email}}" class="text-decoration-none">{{referee.email}}</a> <br>
-                                <a href="tel:{{referee.phone}}" class="text-decoration-none">{{referee.phone}}</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p class="text-muted my-4">No referees added</p>
-        {% endif %}
 </div>
 
 {% endblock %}

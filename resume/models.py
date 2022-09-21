@@ -4,6 +4,7 @@ from django.db import models
 class Education(models.Model):
     course = models.CharField(max_length=100)
     institution = models.CharField(max_length=100)
+    institution_logo = models.ImageField(upload_to='education/institution_logo', null=True, blank=True)
     institution_url = models.URLField(max_length=200, blank=True, null=True)
     institution_city = models.CharField(max_length=100)
     expected_grad_date = models.DateField(null=True, blank=True)

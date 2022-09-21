@@ -9,9 +9,9 @@
 <div class="container pt-0 mt-0">
     <div class="col-lg-7 mx-auto">
         <div class="position-relative" style="display: flex;flex-wrap: wrap;justify-content: flex-end;">
-            <div style="position: relative;flex: 0 0 45%;transform: translate3d(-15%, 35%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.8" src="{% static 'assets/img/products/3.png' %}" /></div>
-            <div style="position: relative;flex: 0 0 45%;transform: translate3d(-5%, 20%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.4" src="{% static 'assets/img/products/2.png' %}" /></div>
-            <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.25" src="{% static 'assets/img/products/1.png' %}" /></div>
+            <div style="position: relative;flex: 0 0 45%;transform: translate3d(-15%, 35%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.8" src="{% static 'assets/img/products/3.jpg' %}" /></div>
+            <div style="position: relative;flex: 0 0 45%;transform: translate3d(-5%, 20%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.4" src="{% static 'assets/img/products/2.jpg' %}" /></div>
+            <div style="position: relative;flex: 0 0 60%;transform: translate3d(0, 0%, 0);"><img class="img-fluid" data-bss-parallax data-bss-parallax-speed="0.25" src="{% static 'assets/img/products/1.jpg' %}" /></div>
         </div>
     </div>
 </div>
@@ -28,12 +28,7 @@
                             </a>
                         {% endif %}
                         <div class="py-4">
-                            {% if portfolio.github_url %}
-                                <span class="badge bg-primary mb-2"><a href="{{portfolio.github_url}}" class="text-white">github</a></span>
-                            {% endif %}
-                            {% if portfolio.live_url %}
-                                <span class="badge bg-secondary mb-2"><a href="{{portfolio.live_url}}" class="text-white">live</a></span>
-                            {% endif %}
+                            <span class="badge bg-primary mb-2"><a href="{{portfolio.url}}" class="text-white">view</a></span>
                             <h4 class="fw-bold">{{portfolio.title}}</h4>
                             <p class="text-muted">{{portfolio.description}}</p>
                         </div>
@@ -51,7 +46,7 @@
                 {% for portfolio in portfolios %}
                     {% if portfolio.image %}
                         <div class="col item">
-                            <a href="{% if portfolio.live_url %}{{portfolio.live_url}}{% endif %}">
+                            <a href="{% if portfolio.url %}{{portfolio.url}}{% endif %}">
                                 <img class="img-fluid" src="{{portfolio.image.url}}">
                             </a>
                         </div>
