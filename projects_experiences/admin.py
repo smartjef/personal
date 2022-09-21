@@ -4,7 +4,7 @@ from .models import Project, Experience
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title','company','description','github_url','live_url', 'date_completed')
+    list_display = ('title','company','image','description','github_url','live_url', 'date_completed')
     list_display_links = ('title',)
     search_fields = ('title', 'description')
     list_per_page = 25

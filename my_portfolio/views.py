@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Portfolio
+from projects_experiences.models import Project
 # Create your views here.
 def portfolio(request):
-    portfolios = Portfolio.objects.all()
+    portfolios = Project.objects.all()
     context = {
         'portfolios': portfolios,
     }
