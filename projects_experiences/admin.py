@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Experience
+from .models import Project, Experience, Referees
 # Register your models here.
 
 @admin.register(Project)
@@ -14,4 +14,11 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_display = ('position','company','start_date','end_date','description')
     list_display_links = ('position',)
     search_fields = ('position', 'description')
+    list_per_page = 25
+
+@admin.register(Referees)
+class RefereesAdmin(admin.ModelAdmin):
+    list_display = ('name','company','position','email','phone')
+    list_display_links = ('name',)
+    search_fields = ('name', 'company', 'position', 'email', 'phone')
     list_per_page = 25

@@ -51,7 +51,7 @@
                 {% for portfolio in portfolios %}
                     {% if portfolio.image %}
                         <div class="col item">
-                            <a href="{% if portfolio.url %}{{portfolio.url}}{% endif %}">
+                            <a href="{% if portfolio.live_url %}{{portfolio.live_url}}{% endif %}">
                                 <img class="img-fluid" src="{{portfolio.image.url}}">
                             </a>
                         </div>
