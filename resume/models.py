@@ -4,7 +4,6 @@ from django.db import models
 class Education(models.Model):
     course = models.CharField(max_length=100)
     institution = models.CharField(max_length=100)
-    institution_logo = models.ImageField(upload_to='education/institution_logo', null=True, blank=True)
     institution_url = models.URLField(max_length=200, blank=True, null=True)
     institution_city = models.CharField(max_length=100)
     expected_grad_date = models.DateField(null=True, blank=True)
@@ -18,4 +17,20 @@ class Education(models.Model):
     class Meta:
         verbose_name_plural = 'Education'
         ordering = ['-date_completed', '-expected_grad_date']
+
+class Referees(models.Model):
+    name = models.CharField(max_length=100)
+    company = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Referees'
+        ordering = ['-created']
+
 
