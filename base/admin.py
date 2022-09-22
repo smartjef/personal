@@ -23,4 +23,4 @@ class ContactAdmin(admin.ModelAdmin):
     list_per_page = 25
 
 
-admin.site.site_heade = "Jeff's Admin"
+admin.site.site_header = "Jeff's Admin"
