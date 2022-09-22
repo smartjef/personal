@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 class Experience(models.Model):
     position = models.CharField(max_length=100)
@@ -18,6 +17,7 @@ class Experience(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=50)
     company = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='project/', null=True, blank=True)
     description = models.TextField()
     github_url = models.URLField(max_length=200, blank=True, null=True)
     live_url = models.URLField(max_length=200, blank=True, null=True)

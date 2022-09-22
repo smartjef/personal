@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ProgrammingLanguage, Framework, Tools
+from .models import ProgrammingLanguage, Framework, Tool
 # Register your models here.
 
 @admin.register(ProgrammingLanguage)
@@ -17,8 +17,8 @@ class FrameworkAdmin(admin.ModelAdmin):
     search_fields = ('title', 'level')
     list_per_page = 25
 
-@admin.register(Tools)
-class ToolsAdmin(admin.ModelAdmin):
+@admin.register(Tool)
+class ToolAdmin(admin.ModelAdmin):
     list_display = ('title',)
     list_display_links = ('title',)
     search_fields = ('title',)

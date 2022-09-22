@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
     #Local apps
     'base',
-    'my_portfolio',
     'resume',
     'skills',
     'projects_experiences',

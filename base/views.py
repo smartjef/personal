@@ -1,5 +1,7 @@
+
 from django.shortcuts import render
 from .models import Review, About
+from projects_experiences.models import Project
 from django.contrib import messages
 # Create your views here.
 def index(request):
@@ -42,3 +44,12 @@ def leave_review(request):
         messages.success(request, 'Review sent successfully.')
         
     return render(request, 'leave_review.html')
+
+
+# Create your views here.
+def portfolio(request):
+    portfolios = Project.objects.all()
+    context = {
+        'portfolios': portfolios,
+    }
+    return render(request, 'portfolio.html', context)
