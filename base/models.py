@@ -5,7 +5,7 @@ class Review(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='reviews/', null=True, blank=True)
     position = models.CharField(max_length=50)
-    message = models.TextField(max_length=500)
+    message = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

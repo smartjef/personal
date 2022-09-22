@@ -44,20 +44,20 @@ def about(request):
     return render(request, 'about.html', context)
 
 def leave_review(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.FILES['image']:
         name = request.POST['name']
         position = request.POST['position']
-        message = request.POST['message']
+        review = request.POST['review']
         image = request.FILES['image']
 
-        if len(message) < 10:
-            messages.warning(request, "Feedback length should be greator than 10 characters")
+        if len(review) < 15:
+            messages.warning(request, "Feedback length should be greator than 15 characters")
             return redirect('leave_review')
 
         review = Review.objects.create(
             name=name,
             position=position,
-            message=message,
+            message = review,
             image=image
         )
 
