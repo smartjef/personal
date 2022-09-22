@@ -15,7 +15,7 @@
     <div class="container">
     {% if messages %}
         {% for message in messages %}
-            <div class="my-3 mx-5 alert alert-{{ message.tags }}" role="alert">
+            <div class="text-center my-3 mx-5 alert alert-{{ message.tags }}" role="alert">
                 {{message}}
             </div>
         {% endfor %}

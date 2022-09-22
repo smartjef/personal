@@ -1,6 +1,6 @@
 
-from django.shortcuts import render
-from .models import Review, About
+from django.shortcuts import render, redirect
+from .models import Review, About, Contact
 from projects_experiences.models import Project
 from django.contrib import messages
 # Create your views here.
@@ -13,13 +13,27 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        first_name = request.POST['firstname']
-        last_name = request.POST['lastname']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
         email = request.POST['email']
         message = request.POST['message']
-        print(first_name, last_name, email, message)
-        messages.success(request, 'Message sent successfully.')
 
+        if len(message) < 10:
+            messages.warning(request, "Feedback length should be greator than 10 characters")
+            return redirect('contact')
+        
+        feed = Contact.objects.create(
+            first_name=fname,
+            last_name=lname,
+            email = email,
+            message = message
+        )
+        feed.save()
+
+        print(f"\n\n {fname} {lname} \n\n {email} \n\n {message} \n\n")
+        messages.success(request,"Message sent successfully")
+        return redirect('/')
+    
     return render(request, 'contact.html')
 
 def about(request):
@@ -33,15 +47,22 @@ def leave_review(request):
     if request.method == 'POST':
         name = request.POST['name']
         position = request.POST['position']
-        msg = request.POST.get('message',"Some wonderfull review")
+        message = request.POST['message']
+        image = request.FILES['image']
 
-        print(name, position, msg)
-        # Review.objects.create(
-        #     name=name,
-        #     position=position,
-        #     message=message
-        # )
-        messages.success(request, 'Review sent successfully.')
+        if len(message) < 10:
+            messages.warning(request, "Feedback length should be greator than 10 characters")
+            return redirect('leave_review')
+
+        review = Review.objects.create(
+            name=name,
+            position=position,
+            message=message,
+            image=image
+        )
+
+        messages.success(request,"Review sent successfully,  Thank you for the Review")
+        return redirect('/')
         
     return render(request, 'leave_review.html')
 
