@@ -44,7 +44,7 @@ def about(request):
     return render(request, 'about.html', context)
 
 def leave_review(request):
-    if request.method == 'POST' and request.FILES['image']:
+    if request.method == 'POST' and request.FILES:
         name = request.POST['name']
         position = request.POST['position']
         review = request.POST['review']

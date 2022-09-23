@@ -11,7 +11,7 @@
                 <h3 class="fw-bold">Leave a Review</h3>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row justify-content-center">
             <div class="form-group col-md-4">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group col-md-8 mb-4">
                     <label for="image" class="fw-bold">Profile</label>
-                    <input type="file" class="form-control" name="image" id="profile">
+                    <input type="file" class="form-control" name="image" required id="image">
                 </div>
                 <div class="form-group col-md-8">
                     <label for="review" class="fw-bold">Review</label>
