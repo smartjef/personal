@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4c&ohas)ic#7r*1!2_l40ww$exf9wmk4$rtxhqkc4k4_&)r=az
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['odhiambo-jeff.me', 'www.odhiambo-jeff.me','smartjef-personal-webisite.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'white_noise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
