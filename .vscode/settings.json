@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c6cc3619-d2b1-41df-9858-1f6f4c5d8661/AppServices/subscriptions/c6cc3619-d2b1-41df-9858-1f6f4c5d8661/resourceGroups/smartjef-personal-website/providers/Microsoft.Web/sites/smartjef-personal-website",
+    "appService.deploySubpath": "."
+}
