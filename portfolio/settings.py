@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'resume',
     'skills',
     'projects_experiences',
+    'api',
 
     'crispy_forms',
 ]
@@ -82,15 +83,28 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'portfolio',
+            'USER': 'Killallnano@portfolio-db-server',
+            'PASSWORD': os.environ.get('DB_PASSWORD'),
+            'HOST': 'portfolio-db-server.postgres.database.azure.com',
+            'PORT': '5432',
+            'OPTIONS': {
+                'sslmode': 'require',
+            }
+        }
+    }
+#postgres://Killallnano%40portfolio-db-server:'Jeff%401234'@portfolio-db-server.postgres.database.azure.com:5432/portfolio
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

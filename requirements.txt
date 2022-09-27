@@ -5,3 +5,4 @@ Pillow==9.2.0
 sqlparse==0.4.2
 tzdata==2022.2
 whitenoise
+psycopg2-binary
