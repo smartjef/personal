@@ -17,7 +17,7 @@
                     <div class="d-flex align-items-center">
                         <div class="w-100">
                             <div class="d-flex align-items-center justify-content-between"><h3 class="text-primary">{{edu.course}}</h3><small>{% if edu.date_completed %}Completed: {{edu.date_completed}}{% else %}Expected: {{edu.expected_grad_date.year}}, {{edu.expected_grad_date.year}}{% endif %}</small></div>
-                            <div class="d-flex align-items-center justify-content-between"><h4><a href="{{edu.institution_logo.url}}">{{edu.institution}}</a></h4><small>{{edu.institution_city}}</small></div>
+                            <div class="d-flex align-items-center justify-content-between"><h4><a href="{{edu.institution_url}}">{{edu.institution}}</a></h4><small>{{edu.institution_city}}</small></div>
                         </div>
                     </div>
                     <h5 class="my-2">Related Course work:</h5>
