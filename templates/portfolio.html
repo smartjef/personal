@@ -23,7 +23,7 @@
                 <div class="col mb-4">
                     <div>
                         {% if portfolio.image %}
-                            <a href="{% if portfolio.url %}{{portfolio.github_url}}{% endif %}">
+                            <a href="{% if portfolio.github_url %}{{portfolio.github_url}}{% endif %}">
                                 <img class="rounded img-fluid shadow w-100 fit-cover" src="{{portfolio.image.url}}" style="height: 250px;">
                             </a>
                         {% endif %}
