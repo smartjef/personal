@@ -105,7 +105,7 @@ else:
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'portfolio',
             'USER': 'Killallnano@portfolio-db-server',
-            'PASSWORD': 'Jeff@1234',
+            'PASSWORD': os.getenv('DB_PASSWORD'),
             'HOST': 'portfolio-db-server.postgres.database.azure.com',
             'PORT': '5432',
             'OPTIONS': {
