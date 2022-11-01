@@ -103,10 +103,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'portfolio',
-            'USER': 'Killallnano@portfolio-db-server',
+            'NAME': 'jeff',
+            'USER': 'vstechadmin@vstech-postgres-db-server',
             'PASSWORD': os.getenv('DB_PASSWORD'),
-            'HOST': 'portfolio-db-server.postgres.database.azure.com',
+            'HOST': 'vstech-postgres-db-server.postgres.database.azure.com',
             'PORT': '5432',
             'OPTIONS': {
                 'sslmode': 'require',
