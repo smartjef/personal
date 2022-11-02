@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'odhiambo-jeff.me',
     'www.odhiambo-jeff.me',
-    'smartjef-personal-website.azurewebsites.net',
+    'sjef.azurewebsites.net',
     ]
 
 
@@ -104,7 +104,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'jeff',
-            'USER': 'vstechadmin@vstech-postgres-db-server',
+            'USER': 'vstechadmin',
             'PASSWORD': os.getenv('DB_PASSWORD'),
             'HOST': 'vstech-postgres-db-server.postgres.database.azure.com',
             'PORT': '5432',
