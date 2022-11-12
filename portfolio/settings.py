@@ -103,10 +103,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'jeff',
-            'USER': 'vstechadmin',
+            'NAME': 'my',
+            'USER': 'dbadmin',
             'PASSWORD': os.getenv('DB_PASSWORD'),
-            'HOST': 'vstech-postgres-db-server.postgres.database.azure.com',
+            'HOST': 'sjef-db-server.postgres.database.azure.com',
             'PORT': '5432',
             'OPTIONS': {
                 'sslmode': 'require',
