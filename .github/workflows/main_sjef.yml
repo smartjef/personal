@@ -31,14 +31,6 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      - name: Make migrations
-        run: |
-          python manage.py makemigrations
-
-      - name: Migrate
-        run: |
-          python manage.py migrate
-
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
