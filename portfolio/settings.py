@@ -165,6 +165,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.azurewebsites.net',
-    'http://*.vstech.live',
-    'https://*.vstech.live',
+    'http://*.odhiambo-jeff.me',
+    'https://*.odhiambo-jeff.me',
 ]
